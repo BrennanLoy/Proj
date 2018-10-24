@@ -18,7 +18,20 @@ public class Ticket2RideModel {
             order.add(new Player("Player" + i)); 
         }
     private static Card drawTrainCardTurn(Deck d, Player p){
-        return d.draw(p); //Return to this
+         while(turnCount < 2)
+            {
+                if(dChoice == "Draw from Deck")
+                {
+                    turnCount++;
+                }
+                else if(dChoice == "Draw from Pile")
+                {
+                    if(pickup == "Wild")
+                        turnCount = 2;
+                    else
+                        turnCount++;
+                }      
+            }
     }
     private static DestinationTicket drawDestinationTicketTurn(Player p){
         
@@ -48,3 +61,5 @@ public class Ticket2RideModel {
     }
     
 }
+
+//ticket2rideView setPlayerTrainCar and setPlayerDestinationTicket
