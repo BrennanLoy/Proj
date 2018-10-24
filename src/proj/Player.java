@@ -32,7 +32,37 @@ public class Player {
     }
     
     boolean ValidMove(){           //default true just for testing
-        return true;
+        if (pchoice == "Draw cards")
+        {
+            while(turnCount < 2)
+            {
+                if(dChoice == "Draw from Deck")
+                {
+                    if(t.draw() == "Wild")
+                        turnCount = 2;
+                    else
+                        turnCount++;
+                }
+                else if(dChoice == "Draw from Pile")
+                {
+                    if(pickup == "Wild")
+                        turnCount = 2;
+                    else
+                        turnCount++;
+                }      
+            }
+        }
+        else if (pchoice == "Destination ticket")
+        {
+            if(t.desDraw != 0)
+                return true;
+            else
+                return false;
+        }
+        else if (pchoice == "Claim Route")
+        {
+            
+        }
     }
     
     ArrayList<Card> THand = new ArrayList<>();
