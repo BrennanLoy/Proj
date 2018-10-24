@@ -10,5 +10,13 @@ package proj;
  * @author Fronz
  */
 public class Route {
-    
+    Route(String r,int l,String c)
+    {
+        Route = r;
+        length = l;
+        color = c;
+    }
+    String Route;
+    int length;
+    String color;
 }
