@@ -11,8 +11,10 @@ package proj;
  */
 public class DestinationTicket
 {
-    DestinationTicket(String n){
+    DestinationTicket(String n,int p){
         name = n;
+        points = p;
     }
     String name;
+    int points;
 }
