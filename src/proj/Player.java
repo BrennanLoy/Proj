@@ -15,13 +15,6 @@ import java.util.Scanner;
 public class Player {
     
     public final String pName;
-    public String pChoice;
-    public String dChoice;
-    public String pickup;
-    public int turnCount;
-    Deck t;
-    DestinationDeck g;
-    Route r;
     
     ArrayList<Card> THand = new ArrayList<>();
     ArrayList<DestinationTicket> DHand = new ArrayList<>();
@@ -30,37 +23,109 @@ public class Player {
         this.pName = name;
     }
     
-        Player p;
     
     public String getpName(){
         return pName;
     }
     
-    public String pTurn(String c){
-        this.pChoice = c;
-        return pChoice;
+    public static void drawTrainCardTurn(Deck d){ 
+    }
+    public static void drawDestinationTicketTurn(DestinationDeck d){
+    }
+    public static void claimRouteTurn(){
     }
     
-    boolean ValidMove(){           //default true just for testing
-        if (pChoice == "Draw cards")
-        {
-            if(t.totalC != 0)
-                return true;
-            return false;
-        }
-        else if (pChoice == "Destination ticket")
-        {
-            if(g.desTickets != 0)
-                return true;
-            return false;
-        }
-        else if (pChoice == "Claim Route")
-        {
-            for(int i =0; i < DHand.size(); i++)
-            {
-                if(DHand.get(i) == r.Route && r.colorNum() == r.length;)
-            }
-        }
+    public void pTurn(Deck t, DestinationDeck g, Route r){
+        Scanner S = new Scanner(System.in);
+        System.out.println("1: Draw Car, 2: Draw Ticket, 3: Claim Route");
+        int a = S.nextInt();
+        switch(a){
+            case 1:
+                if(validMove(a,t,g,r))
+                    drawTrainCardTurn(t);
+                break;
+            case 2:
+                if(validMove(a,t,g,r))
+                    drawDestinationTicketTurn(g);
+            case 3:
+                if(validMove(a,t,g,r))
+                    claimRouteTurn();
+               
+        }   
     }
     
+    boolean validMove(int v, Deck t, DestinationDeck g, Route r){ 
+        int redl = 0,bluel = 0,whitel = 0,blackl = 0,purplel = 0,orangel = 0,yellowl = 0,greenl = 0,wildl = 0;
+        switch (v) {
+            case 1:
+                if(t.totalC != 0)
+                    return true;
+                return false;
+            case 2:
+                if(g.desTickets != 0)
+                    return true;
+                return false;
+            case 3:
+                for(int i = 0; i < DHand.size(); i++){
+                    if(DHand.get(i).name.equals(r.Route)){
+                        if(null != this.THand.get(i).color){
+                            for(int j = 0; j < THand.size(); j++){
+                                switch (this.THand.get(i).color) {
+                                    case "Red":
+                                        if(redl == r.length)
+                                            return true;
+                                        redl++;
+                                        break;
+                                    case "Blue":
+                                        if(bluel == r.length)
+                                            return true;
+                                        bluel++;
+                                        break;
+                                    case "White":
+                                        if(whitel == r.length)
+                                            return true;
+                                        whitel++;
+                                        break;
+                                    case "Black":
+                                        if(blackl == r.length)
+                                            return true;
+                                        blackl++;
+                                        break;
+                                    case "Purple":
+                                        if(purplel == r.length)
+                                            return true;
+                                        purplel++;
+                                        break;
+                                    case "Orange":
+                                        if(orangel == r.length)
+                                            return true;
+                                        orangel++;
+                                        break;
+                                    case "Yellow":
+                                        if(yellowl == r.length)
+                                            return true;
+                                        yellowl++;
+                                        break;
+                                    case "Green":
+                                        if(greenl == r.length)
+                                            return true;
+                                        greenl++;
+                                        break;
+                                    case "Wild":
+                                        if(wildl == r.length)
+                                            return true;
+                                        wildl++;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                }   break;
+            default:
+                break;
+        }
+    return false;
+    }
 }
