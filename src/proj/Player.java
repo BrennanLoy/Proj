@@ -32,31 +32,20 @@ public class Player {
     }
     public static void drawDestinationTicketTurn(DestinationDeck d){
     }
-    public static void claimRouteTurn(){
+    public static void claimRouteTurn(Route r){
     }
     
-    public void pTurn(Deck t, DestinationDeck g, Route r){
+    public int pTurn(){
         Scanner S = new Scanner(System.in);
         System.out.println("1: Draw Car, 2: Draw Ticket, 3: Claim Route");
         int a = S.nextInt();
-        switch(a){
-            case 1:
-                if(validMove(a,t,g,r))
-                    drawTrainCardTurn(t);
-                break;
-            case 2:
-                if(validMove(a,t,g,r))
-                    drawDestinationTicketTurn(g);
-            case 3:
-                if(validMove(a,t,g,r))
-                    claimRouteTurn();
-               
-        }   
+        return a;
+        
     }
     
-    boolean validMove(int v, Deck t, DestinationDeck g, Route r){ 
+    boolean validMove(Deck t, DestinationDeck g, Route r){ 
         int redl = 0,bluel = 0,whitel = 0,blackl = 0,purplel = 0,orangel = 0,yellowl = 0,greenl = 0,wildl = 0;
-        switch (v) {
+        switch (pTurn()) {
             case 1:
                 if(t.totalC != 0)
                     return true;
