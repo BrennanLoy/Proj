@@ -47,10 +47,13 @@ public class Player {
             case 2:
                 if(validMove(a,t,g,r))
                     drawDestinationTicketTurn(g);
+                break;
             case 3:
                 if(validMove(a,t,g,r))
                     claimRouteTurn();
-               
+                break;
+            default:
+                break;   
         }   
     }
     
