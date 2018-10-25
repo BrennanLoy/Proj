@@ -12,6 +12,7 @@ public class DestinationDeck {
     public int desTickets = 30;
     ArrayList<DestinationTicket> ticDeck;
     public int dtCount = 0;
+    public int tLeft = 5;
 
     public DestinationDeck() {
         this.ticDeck = new ArrayList<>();
@@ -27,9 +28,11 @@ public class DestinationDeck {
         while(dtCount != 3)
         {
             Random rand = new Random();
-            int x = rand.nextInt(5);
+            int x = rand.nextInt(tLeft);
             
             p.DHand.add(ticDeck.get(x));
+            ticDeck.remove(x);
+            tLeft--;
         }
     }
 }
