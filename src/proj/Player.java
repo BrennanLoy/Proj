@@ -16,11 +16,21 @@ public class Player {
     
     public final String pName;
     public String pChoice;
+    public String dChoice;
+    public String pickup;
+    public int turnCount;
+    Deck t;
+    DestinationDeck g;
+    Route r;
     
+    ArrayList<Card> THand = new ArrayList<>();
+    ArrayList<DestinationTicket> DHand = new ArrayList<>();
     
     Player(String name){
         this.pName = name;
     }
+    
+        Player p;
     
     public String getpName(){
         return pName;
@@ -32,39 +42,25 @@ public class Player {
     }
     
     boolean ValidMove(){           //default true just for testing
-        if (pchoice == "Draw cards")
+        if (pChoice == "Draw cards")
         {
-            while(turnCount < 2)
-            {
-                if(dChoice == "Draw from Deck")
-                {
-                    if(t.draw() == "Wild")
-                        turnCount = 2;
-                    else
-                        turnCount++;
-                }
-                else if(dChoice == "Draw from Pile")
-                {
-                    if(pickup == "Wild")
-                        turnCount = 2;
-                    else
-                        turnCount++;
-                }      
-            }
-        }
-        else if (pchoice == "Destination ticket")
-        {
-            if(t.desDraw != 0)
+            if(t.totalC != 0)
                 return true;
-            else
-                return false;
+            return false;
         }
-        else if (pchoice == "Claim Route")
+        else if (pChoice == "Destination ticket")
         {
-            
+            if(g.desTickets != 0)
+                return true;
+            return false;
+        }
+        else if (pChoice == "Claim Route")
+        {
+            for(int i =0; i < DHand.size(); i++)
+            {
+                if(DHand.get(i) == r.Route && r.colorNum() == r.length;)
+            }
         }
     }
     
-    ArrayList<Card> THand = new ArrayList<>();
-    ArrayList<DestinationTicket> DHand = new ArrayList<>();
 }
