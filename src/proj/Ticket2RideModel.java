@@ -14,11 +14,11 @@ import java.util.List;
 
 public class Ticket2RideModel {
 
-    private static void ticket2RideSetup(ArrayList<Player> order, Deck d, DestinationDeck dt){
+    private static void ticket2RideStart(ArrayList<Player> order, Deck d, DestinationDeck dt){
         for(int i = 0; i < 2; i++){
             order.add(new Player("Player"+i));
             for(int j = 0; j < 4; j++){
-                d.draw(order.get(i));
+                
             }
             for(int j = 0; j < 3; j++){
                 dt.dtDraw(order.get(i));
@@ -26,12 +26,9 @@ public class Ticket2RideModel {
             
         }
     }
-    
-    
-
-    
-    
+    /*
     public static void main(String[] args) {
+        
         Deck d = new Deck();
         DestinationDeck desDeck = new DestinationDeck();
         ArrayList<Player> turnOrder = new ArrayList<>();
@@ -43,7 +40,7 @@ public class Ticket2RideModel {
         Route r5 = new Route("Los Angeles to San Francisco", 3);
         Route r6 = new Route("Portland to San Francisco", 5);
         
-        ticket2RideSetup(turnOrder, d, desDeck);
+        ticket2RideStart(turnOrder, d, desDeck);
         for(int i = 0; i < 2; i++){
             System.out.println(turnOrder.get(i).validMove(d, desDeck, r1));
             System.out.println(turnOrder.get(i).validMove(d, desDeck, r2));
@@ -62,7 +59,7 @@ public class Ticket2RideModel {
         
 
     }
-    
+    */
 }
 
 //ticket2rideView setPlayerTrainCar and setPlayerDestinationTicket

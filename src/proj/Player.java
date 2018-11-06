@@ -56,7 +56,7 @@ public class Player {
                 return false;
             case 3:
                 for(int i = 0; i < DHand.size(); i++){
-                    if(DHand.get(i).name.equals(r.Route)){
+                    if(DHand.get(i).origin_destination.equals(r.Route)){
                         if(null != this.THand.get(i).color){
                             for(int j = 0; j < THand.size(); j++){
                                 switch (this.THand.get(i).color) {

@@ -16,74 +16,74 @@ public class Deck {
     public int locoNum = 14;
     public int totalC =  110;
     
-    public Card draw(Player p){
+    public Card draw(){
         Random rand = new Random();
         int x = rand.nextInt(8);
         
 	switch(x){
             case 0:
 		if(this.purpleNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     purpleNum--;
                     totalC--;
-                    p.THand.add(new Card("Purple"));}
+                    return new Card("Purple");}
             case 1:
                 if(this.whiteNum == 0)
-                   draw(p);
+                   draw();
                 else{
                     whiteNum--;
                     totalC--;
-                    p.THand.add(new Card("White"));}
+                    return new Card("White");}
             case 2:
                 if(this.blueNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     blueNum--;
                     totalC--;
-                    p.THand.add(new Card("Blue"));}
+                    return new Card("Blue");}
             case 3:
                 if(this.yellowNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     yellowNum--;
                     totalC--;
-                    p.THand.add(new Card("Yellow"));}
+                    return new Card("Yellow");}
             case 4:
                 if(this.orangeNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     orangeNum--;
                     totalC--;
-                    p.THand.add(new Card("Orange"));}
+                    return new Card("Orange");}
             case 5:
                 if(this.blackNum == 0)
-                   draw(p);
+                   draw();
                 else{
                     blackNum--;
                     totalC--;
-                    p.THand.add(new Card("Black"));}
+                    return new Card("Black");}
             case 6:
                 if(this.redNum == 0)
-                   draw(p);
+                   draw();
                 else{
                     redNum--;
                     totalC--;
-                    p.THand.add(new Card("Red"));}
+                    return new Card("Red");}
             case 7:
                 if(this.greenNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     greenNum--;
                     totalC--;
-                    p.THand.add(new Card("Green"));}
+                    return new Card("Green");}
             case 8: 
                 if(this.locoNum == 0)
-                    draw(p);
+                    draw();
                 else{
                     locoNum--;
                     totalC--;
-                    p.THand.add(new Card("Wild")) ;}
+                    return new Card("Loco");}
 	}
         return new Card("Blank");
     }

@@ -16,12 +16,12 @@ public class DestinationDeck {
 
     public DestinationDeck() {
         this.ticDeck = new ArrayList<>();
-        ticDeck.add(new DestinationTicket("San Francisco to Salt Lake City", 6));
-        ticDeck.add(new DestinationTicket("San Francisco to Los Angeles", 3));
-        ticDeck.add(new DestinationTicket("San Francisco to Portland", 5));
-        ticDeck.add(new DestinationTicket("Salt Lake City to San Francisco", 6));
-        ticDeck.add(new DestinationTicket("Los Angeles to San Francisco", 3));
-        ticDeck.add(new DestinationTicket("Portland to San Francisco", 5));
+        ticDeck.add(new DestinationTicket("San Francisco to Salt Lake City"));
+        ticDeck.add(new DestinationTicket("San Francisco to Los Angeles"));
+        ticDeck.add(new DestinationTicket("San Francisco to Portland"));
+        ticDeck.add(new DestinationTicket("Salt Lake City to San Francisco"));
+        ticDeck.add(new DestinationTicket("Los Angeles to San Francisco"));
+        ticDeck.add(new DestinationTicket("Portland to San Francisco"));
     }
     
     public void dtDraw(Player p){
