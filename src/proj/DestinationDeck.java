@@ -24,15 +24,9 @@ public class DestinationDeck {
         ticDeck.add(new DestinationTicket("Portland to San Francisco"));
     }
     
-    public void dtDraw(Player p){
-        while(dtCount != 3)
-        {
-            Random rand = new Random();
-            int x = rand.nextInt(tLeft);
-            
-            p.DHand.add(ticDeck.get(x));
-            ticDeck.remove(x);
-            tLeft--;
-        }
+    public DestinationTicket dtDraw(){
+        while(dtCount<5)
+             return ticDeck.get(dtCount);
+        return new DestinationTicket();
     }
 }
