@@ -19,14 +19,25 @@ public class Card
         
         switch(color){
             case("Purple"):
-            case("White"):    
+                return "";
+            case("White"):
+                return "";
             case("Blue"):
-            case("Yellow"):  
+                return "";
+            case("Yellow"):
+                return "";
             case("Orange"):
+                return "";
             case("Black"):
+                return "";
             case("Red"):
+                return "";
             case("Green"):
+                return "";
             case("Loco"):
+                return "";
+            default:
+                return "";
         }
     }
 }
