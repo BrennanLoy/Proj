@@ -32,7 +32,7 @@ public class Player {
     }
     public static void drawDestinationTicketTurn(DestinationDeck d){
     }
-    public static void claimRouteTurn(Route r){
+    public static void claimRouteTurn(){
     }
     
     public int pTurn(){
