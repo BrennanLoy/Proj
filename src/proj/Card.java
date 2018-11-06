@@ -13,5 +13,31 @@ public class Card
 {
     
     Card(String c){color = c;}
-    String color;        
+    String color;   
+    
+    public String getJPGImage(){
+        
+        switch(color){
+            case("Purple"):
+                return "";
+            case("White"):
+                return "";
+            case("Blue"):
+                return "";
+            case("Yellow"):
+                return "";
+            case("Orange"):
+                return "";
+            case("Black"):
+                return "";
+            case("Red"):
+                return "";
+            case("Green"):
+                return "";
+            case("Loco"):
+                return "";
+            default:
+                return "";
+        }
+    }
 }

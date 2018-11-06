@@ -21,7 +21,7 @@ public class Ticket2RideModel {
                 
             }
             for(int j = 0; j < 3; j++){
-                dt.dtDraw(order.get(i));
+                dt.dtDraw();
             }
             
         }
